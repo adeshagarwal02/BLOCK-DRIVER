@@ -1,0 +1,51 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2018.03.11.14.42.17;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2018.03.11.14.23.33;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@#include"header.h"
+#include"declaration.h"
+unsigned int majorno = MAJORNO;
+static int __init init_func(void)
+{
+        printk(KERN_INFO "%s: Hello Kernel\n",__func__);
+        majorno=register_blkdev(majorno,BDEVNAME);
+
+        return 0;
+}
+module_init(init_func);
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d6 1
+a6 1
+        printk(KERN_INFO "Hello Kernel\n");
+@

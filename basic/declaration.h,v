@@ -1,0 +1,31 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2018.03.11.14.23.34;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#ifndef MAJORNO
+#define MAJORNO 0
+#endif
+#ifndef BDEVNAME
+#define BDEVNAME "BLOCK1"
+#endif
+extern unsigned int majorno;
+@
